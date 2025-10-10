@@ -312,43 +312,45 @@ export default function HomePage() {
                 image: "/aquarium-heater.jpg",
               },
             ].map((review, index) => (
-              <Card
-                key={index}
-                className="group overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={review.image || "/placeholder.svg"}
-                    alt={review.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-semibold">
-                    {review.category}
+              <Link key={index} href="/reviews">
+                <Card
+                  className="group overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={review.image || "/placeholder.svg"}
+                      alt={review.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-semibold">
+                      {review.category}
+                    </div>
                   </div>
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-1 mb-3">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`w-4 h-4 ${
-                          i < Math.floor(review.rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
-                        }`}
-                      />
-                    ))}
-                    <span className="text-sm font-semibold ml-2">{review.rating}</span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 text-ocean-deep group-hover:text-ocean-primary transition-colors">
-                    {review.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-4">
-                    Comprehensive review with pros, cons, and real-world testing results
-                  </p>
-                  <div className="text-ocean-primary font-semibold flex items-center gap-2">
-                    Read Review <ArrowRight size={16} />
-                  </div>
-                </CardContent>
-              </Card>
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-1 mb-3">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`w-4 h-4 ${
+                            i < Math.floor(review.rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
+                          }`}
+                        />
+                      ))}
+                      <span className="text-sm font-semibold ml-2">{review.rating}</span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2 text-ocean-deep group-hover:text-ocean-primary transition-colors">
+                      {review.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4">
+                      Comprehensive review with pros, cons, and real-world testing results
+                    </p>
+                    <div className="text-ocean-primary font-semibold flex items-center gap-2 group-hover:gap-4 transition-all">
+                      Read Review <ArrowRight size={16} />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
