@@ -9,11 +9,11 @@ import { notFound, useParams } from "next/navigation"
 import { Star, CheckCircle, XCircle, ExternalLink, ArrowLeft, ShoppingCart } from "lucide-react"
 import { useEffect } from "react"
 
-export function generateStaticParams() {
-	return reviews.map((review) => ({
-		slug: review.slug,
-	}))
-}
+// export function generateStaticParams() {
+// 	return reviews.map((review) => ({
+// 		slug: review.slug,
+// 	}))
+// }
 
 export default function ReviewDetailPage() {
 	const params = useParams();
