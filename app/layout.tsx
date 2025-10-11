@@ -5,35 +5,36 @@ import "./globals.css"
 import { CookieConsent } from "@/components/cookie-consent"
 
 const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
+	subsets: ["latin"],
+	variable: "--font-playfair",
+	display: "swap",
 })
 
 const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
+	subsets: ["latin"],
+	variable: "--font-inter",
+	display: "swap",
 })
 
-export const metadata: Metadata = {
-  title: "Tank Accessory - Premium Aquarium Reviews & Guides",
-  description:
-    "Expert reviews and guides for aquarium accessories, lighting, filters, and more. Find the perfect equipment for your aquatic paradise.",
-    generator: 'v0.app'
+export const metadata: any = {
+	title: "Tank Accessory - Premium Aquarium Reviews & Guides",
+	description:
+		"Expert reviews and guides for aquarium accessories, lighting, filters, and more. Find the perfect equipment for your aquatic paradise.",
+	generator: 'v0.app',
+	referrer: 'unsafe-url'
 }
 
 export default function RootLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode
+	children: React.ReactNode
 }) {
-  return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="font-sans antialiased">
-        {children}
-        <CookieConsent />
-      </body>
-    </html>
-  )
+	return (
+		<html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+			<body className="font-sans antialiased">
+				{children}
+				<CookieConsent />
+			</body>
+		</html>
+	)
 }
