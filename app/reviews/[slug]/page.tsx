@@ -146,7 +146,7 @@ export default function ReviewDetailPage() {
 
 								<div className="flex flex-col sm:flex-row gap-4">
 									<Button asChild size="lg" className="bg-ocean-primary hover:bg-ocean-deep text-lg">
-										<a href={review.amazonLink + "?tag=tankaccessory-20"} data-auto>
+										<a href={review.amazonLink + "?tag=annatanka-20"} data-auto>
 											<ShoppingCart className="mr-2" size={20} />
 											Buy on Amazon
 										</a>
@@ -279,7 +279,7 @@ export default function ReviewDetailPage() {
 
 						<div className="mt-12 text-center">
 							<Button asChild size="lg" className="bg-ocean-primary hover:bg-ocean-deep text-lg px-12">
-								<a href={review.amazonLink + "?tag=tankaccessory-20"} data-auto>
+								<a href={review.amazonLink + "?tag=annatanka-20"} data-auto>
 									<ShoppingCart className="mr-2" size={20} />
 									Purchase on Amazon
 								</a>
